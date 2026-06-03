@@ -5,7 +5,12 @@
 # Home Assistant Community App: AdGuard Home
 # Handles configuration
 # ==============================================================================
-readonly CONFIG="/data/adguard/AdGuardHome.yaml"
+#
+# Config is stored in /addon_configs/adguard/ — accessible via SFTP.
+# Runtime data (query log, stats, filters db) stays in /data/adguard/.
+#
+readonly CONFIG="/addon_configs/adguard/AdGuardHome.yaml"
+readonly OLD_CONFIG="/data/adguard/AdGuardHome.yaml"
 declare schema_version
 declare -a interfaces
 declare -a hosts
@@ -13,9 +18,23 @@ declare part
 declare fd
 declare a2
 
+# Ensure config directory exists (mounted via map: addon_configs:rw)
+mkdir -p /addon_configs/adguard
+# Ensure runtime data directory exists
+mkdir -p /data/adguard
+
 if ! bashio::fs.file_exists "${CONFIG}"; then
-    mkdir -p /data/adguard
-    cp /etc/adguard/AdGuardHome.yaml "${CONFIG}"
+    # Migrate existing config from old location (/data/adguard/) if present
+    if bashio::fs.file_exists "${OLD_CONFIG}"; then
+        bashio::log.info "Migrating AdGuardHome.yaml from /data/adguard/ to /addon_configs/adguard/"
+        cp "${OLD_CONFIG}" "${CONFIG}"
+        # Keep old file as backup so AdGuard's own migration logic isn't confused
+        mv "${OLD_CONFIG}" "${OLD_CONFIG}.bak"
+        bashio::log.info "Old config backed up as AdGuardHome.yaml.bak in /data/adguard/"
+    else
+        bashio::log.info "Creating default AdGuardHome.yaml in /addon_configs/adguard/"
+        cp /etc/adguard/AdGuardHome.yaml "${CONFIG}"
+    fi
 fi
 
 port=$(bashio::addon.port "53/udp") \
