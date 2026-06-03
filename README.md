@@ -4,6 +4,17 @@ Network-wide ads & trackers blocking DNS server.
 
 ![The AdGuard Home Home Assistant App](https://github.com/sjauijn/app-adguard-home-plus/blob/main/images/screenshot.png)
 
+## Installation
+
+1. Click to add the stable repository:
+   [![Add Stable Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/sjauijn/app-adguard-home-plus)
+
+2. Or manually add:
+
+   ```text
+   https://github.com/sjauijn/app-adguard-home-plus
+   ```
+
 ## About
 
 AdGuard Home is a network-wide ad-and-tracker blocking DNS server with
