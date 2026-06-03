@@ -2,7 +2,7 @@
 
 Network-wide ads & trackers blocking DNS server.
 
-![AdGuard Home in the Home Assistant frontend][screenshot]
+![The AdGuard Home Home Assistant App](https://github.com/sjauijn/app-adguard-home-plus/blob/main/images/screenshot.png)
 
 ## About
 
@@ -29,7 +29,3 @@ Portainer or Docker console access.
 **Migration**: On first start, if you already have an existing config in
 `/data/adguard/AdGuardHome.yaml`, it will be automatically copied to the new
 location. The old file will be renamed to `AdGuardHome.yaml.bak`.
-
-
-
-[screenshot]: https://github.com/sjauijn/app-adguard-home-plus/blob/main/images/screenshot.png
