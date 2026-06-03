@@ -28,6 +28,7 @@ hassio_api: true
 hassio_role: manager
 map:
   - ssl
+  - addon_configs:rw
 options:
   ssl: true
   certfile: fullchain.pem
