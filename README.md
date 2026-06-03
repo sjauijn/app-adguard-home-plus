@@ -1,4 +1,4 @@
-# Home Assistant Community App: AdGuard Home
+# AdGuard Home Plus - Original HA Community App + AdGuardHome.yaml via "/addon_configs"
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
