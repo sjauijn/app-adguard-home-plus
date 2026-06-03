@@ -1,9 +1,9 @@
 ---
-name: AdGuard Home
+name: AdGuard Home Plus
 version: dev
 slug: adguard
-description: Network-wide ads & trackers blocking DNS server
-url: https://github.com/hassio-addons/app-adguard-home
+description: Network-wide ads & trackers blocking DNS server with AdGuardHome.yaml accessible via SFTP
+url: https://github.com/sjauijn/app-adguard-home-plus
 ingress: true
 ingress_port: 0
 ingress_stream: true
