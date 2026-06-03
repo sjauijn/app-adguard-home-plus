@@ -1,4 +1,4 @@
-# Home Assistant Community App: AdGuard Home
+# AdGuard Home Plus - Original HA Community App + AdGuardHome.yaml via "/addon_configs"
 
 [AdGuard Home][adguard] is a network-wide ad-and-tracker blocking DNS server
 with parental control (adult content blocking) capabilities. Its purpose is to
@@ -7,6 +7,22 @@ require using a client-side program.
 
 AdGuard Home provides a beautiful, easy and feature-rich web interface to
 easily manage the filtering process and its settings.
+
+## What's different from the original app
+
+This fork moves `AdGuardHome.yaml` from the internal `/data/adguard/` directory
+to `/addon_configs/adguard/`, making it accessible via SFTP without needing
+Portainer or Docker console access.
+
+| | Original | This fork |
+|---|---|---|
+| `AdGuardHome.yaml` location | `/data/adguard/` | `/addon_configs/adguard/` |
+| Accessible via SFTP | ❌ | ✅ |
+| Query log, stats, filters DB | `/data/adguard/` | `/data/adguard/` (unchanged) |
+
+**Migration**: On first start, if you already have an existing config in
+`/data/adguard/AdGuardHome.yaml`, it will be automatically copied to the new
+location. The old file will be renamed to `AdGuardHome.yaml.bak`.
 
 ## Installation
 
@@ -23,9 +39,7 @@ comparison to installing any other Home Assistant app.
    - Please note, setting a fixed IP in your router is **NOT** static.
 1. Click the Home Assistant My button below to open the app on your Home
    Assistant instance.
-
    [![Open this app in your Home Assistant instance.][addon-badge]][addon]
-
 1. Click the "Install" button to install the app.
 1. Start the "AdGuard Home" app.
 1. Check the logs of the "AdGuard Home" to see if everything went well.
@@ -46,6 +60,19 @@ keyfile: privkey.pem
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
+
+### AdGuardHome.yaml location
+
+The main AdGuard Home configuration file is stored at:
+
+```
+/addon_configs/adguard/AdGuardHome.yaml
+```
+
+This path is accessible via SFTP (e.g. using WinSCP, Cyberduck, or the
+VS Code Remote SSH extension) without needing Portainer or Docker console
+access. Runtime data (query log, statistics, filter databases) remains in
+`/data/adguard/` as in the original app.
 
 ### Option: `log_level`
 
@@ -101,74 +128,6 @@ app afterwards. Also to use DNS-over-HTTPS correctly please ensure to
 configure SSL on the app as well as in Adguard itself. Also consider
 that the app and Adguard cannot use the same port for SSL.
 
-## Changelog & Releases
-
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
-
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
-
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
-
-## Support
-
-Got questions?
-
-You have several options to get them answered:
-
-- The [Home Assistant Community Apps Discord chat server][discord] for app
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
-
-## Authors & contributors
-
-The original setup of this repository is by [Franck Nijhof][frenck].
-
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
-
-## License
-
-MIT License
-
-Copyright (c) 2019-2026 Franck Nijhof
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_adguard&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
 [adguard]: https://adguard.com/adguard-home/overview.html
-[contributors]: https://github.com/hassio-addons/app-adguard-home/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-adguard-home/90684?u=frenck
-[frenck]: https://github.com/frenck
-[issue]: https://github.com/hassio-addons/app-adguard-home/issues
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/app-adguard-home/releases
-[semver]: https://semver.org/spec/v2.0.0.html
