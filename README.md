@@ -2,8 +2,7 @@
 
 Network-wide ads & trackers blocking DNS server.
 
-![The AdGuard Home Home Assistant App](images/screenshot.png)
-
+![The AdGuard Home Home Assistant App](https://github.com/sjauijn/app-adguard-home-plus/blob/main/images/screenshot.png)
 ## About
 
 AdGuard Home is a network-wide ad-and-tracker blocking DNS server with
