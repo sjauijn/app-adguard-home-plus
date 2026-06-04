@@ -21,10 +21,6 @@ declare part
 declare fd
 declare a2
 
-# Log what's actually mounted to help debug
-bashio::log.info "Addon config dir contents:"
-ls -la "${CONFIG_DIR}" 2>&1 | while IFS= read -r line; do bashio::log.info "  $line"; done || bashio::log.warning "  (directory not found or empty)"
-
 # Ensure runtime data directory exists
 mkdir -p /data/adguard
 
