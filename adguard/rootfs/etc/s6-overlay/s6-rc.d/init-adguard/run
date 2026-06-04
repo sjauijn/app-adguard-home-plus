@@ -6,11 +6,10 @@
 # Handles configuration
 # ==============================================================================
 #
-# Config is stored in /addon_configs/<slug>/ — accessible via SFTP.
-# Runtime data (query log, stats, filters db) stays in /data/adguard/.
+# Config is stored in /addon_config/ — mounted by HA as /addon_configs/<slug>/
+# and accessible via SFTP. Runtime data stays in /data/adguard/.
 #
-readonly ADDON_SLUG=$(bashio::addon.slug)
-readonly CONFIG_DIR="/addon_configs/${ADDON_SLUG}"
+readonly CONFIG_DIR="/addon_config"
 readonly CONFIG="${CONFIG_DIR}/AdGuardHome.yaml"
 readonly OLD_CONFIG="/data/adguard/AdGuardHome.yaml"
 declare schema_version
@@ -20,21 +19,18 @@ declare part
 declare fd
 declare a2
 
-# Ensure config directory exists (mounted via map: addon_configs:rw)
-mkdir -p "${CONFIG_DIR}"
 # Ensure runtime data directory exists
 mkdir -p /data/adguard
 
 if ! bashio::fs.file_exists "${CONFIG}"; then
     # Migrate existing config from old location (/data/adguard/) if present
     if bashio::fs.file_exists "${OLD_CONFIG}"; then
-        bashio::log.info "Migrating AdGuardHome.yaml from /data/adguard/ to ${CONFIG_DIR}/"
+        bashio::log.info "Migrating AdGuardHome.yaml from /data/adguard/ to /addon_config/"
         cp "${OLD_CONFIG}" "${CONFIG}"
-        # Keep old file as backup so AdGuard's own migration logic isn't confused
         mv "${OLD_CONFIG}" "${OLD_CONFIG}.bak"
         bashio::log.info "Old config backed up as AdGuardHome.yaml.bak in /data/adguard/"
     else
-        bashio::log.info "Creating default AdGuardHome.yaml in ${CONFIG_DIR}/"
+        bashio::log.info "Creating default AdGuardHome.yaml in /addon_config/"
         cp /etc/adguard/AdGuardHome.yaml "${CONFIG}"
     fi
 fi
