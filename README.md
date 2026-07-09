@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sjauijn/app-adguard-home-plus/main/adguard/icon.png" alt="icon">
+  <img src="https://raw.githubusercontent.com/sjauijn/adguard-home-plus-HAOS/main/adguard/icon.png" alt="icon">
 </p>
 
 # AdGuard Home Plus
@@ -17,7 +17,7 @@ AdGuard Home provides a beautiful, easy and feature-rich web interface to
 easily manage the filtering process and its settings.
 
 <p>
-  <img src="https://raw.githubusercontent.com/sjauijn/app-adguard-home-plus/main/images/screenshot.jpg" alt="icon">
+  <img src="https://raw.githubusercontent.com/sjauijn/adguard-home-plus-HAOS/main/images/screenshot.jpg" alt="icon">
 </p>
 
 ## Installation
@@ -32,12 +32,12 @@ easily manage the filtering process and its settings.
    - Please note, setting a fixed IP in your router is **NOT** static.
 
 2. Click to add the stable repository:
-   [![Add Stable Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/sjauijn/app-adguard-home-plus)
+   [![Add Stable Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/sjauijn/adguard-home-plus-HAOS)
 
    Or manually add:
 
    ```text
-   https://github.com/sjauijn/app-adguard-home-plus
+   https://github.com/sjauijn/adguard-home-plus-HAOS
    ```
 
 
