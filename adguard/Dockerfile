@@ -56,7 +56,7 @@ LABEL \
     org.opencontainers.image.vendor="sjauijn" \
     org.opencontainers.image.authors="sjauijn" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://github.com/sjauijn/app-adguard-home-plus" \
+    org.opencontainers.image.url="https://github.com/sjauijn/adguard-home-plus-HAOS" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
