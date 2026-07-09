@@ -6,6 +6,18 @@
 
 I maintain this app, along with my other Home Assistant apps, solely for my own use. As long as I'm actively using them myself, I'll continue developing and updating them; otherwise, support for apps I no longer need will be discontinued.
 
+## What's different from the original app
+
+This fork moves `AdGuardHome.yaml` from the internal `/data/adguard/` directory
+to `/addon_configs/adguard/`, making it accessible via SFTP without needing
+Portainer or Docker console access.
+
+| | Original | This fork |
+|---|---|---|
+| `AdGuardHome.yaml` location | `/data/adguard/` | `/addon_configs/adguard/` |
+| Accessible via SFTP | ❌ | ✅ |
+| Query log, stats, filters DB | `/data/adguard/` | `/data/adguard/` (unchanged) |
+
 ## About
 
 AdGuard Home is a network-wide ad-and-tracker blocking DNS server with
@@ -19,18 +31,6 @@ easily manage the filtering process and its settings.
 <p>
   <img src="https://raw.githubusercontent.com/sjauijn/adguard-home-plus-HAOS/main/images/screenshot.jpg" alt="icon">
 </p>
-
-## What's different from the original app
-
-This fork moves `AdGuardHome.yaml` from the internal `/data/adguard/` directory
-to `/addon_configs/adguard/`, making it accessible via SFTP without needing
-Portainer or Docker console access.
-
-| | Original | This fork |
-|---|---|---|
-| `AdGuardHome.yaml` location | `/data/adguard/` | `/addon_configs/adguard/` |
-| Accessible via SFTP | ❌ | ✅ |
-| Query log, stats, filters DB | `/data/adguard/` | `/data/adguard/` (unchanged) |
 
 ## Installation
 
