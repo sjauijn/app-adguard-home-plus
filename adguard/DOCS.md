@@ -4,10 +4,15 @@
 
 # AdGuard Home Plus
 
-[AdGuard Home][adguard] is a network-wide ad-and-tracker blocking DNS server
-with parental control (adult content blocking) capabilities. Its purpose is to
-let you control your entire network and all your devices, and it does not
-require using a client-side program.
+I maintain this app, along with my other Home Assistant apps, solely for my own use. As long as I'm actively using them myself, I'll continue developing and updating them; otherwise, support for apps I no longer need will be discontinued.
+
+## About
+AdGuard Home is a network-wide ad-and-tracker blocking DNS server with
+parental control (adult content blocking) capabilities. Its purpose is to let
+you control your entire network and all your devices, and it does not require
+using a client-side program.
+
+![The AdGuard Home Home Assistant App](https://github.com/sjauijn/app-adguard-home-plus/blob/main/images/screenshot.png)
 
 AdGuard Home provides a beautiful, easy and feature-rich web interface to
 easily manage the filtering process and its settings.
