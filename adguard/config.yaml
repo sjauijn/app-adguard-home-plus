@@ -3,7 +3,7 @@ name: AdGuard Home Plus
 version: v6.2.0-plus-0.107.77
 slug: adguard
 description: Network-wide ads & trackers blocking DNS server with AdGuardHome.yaml accessible via SFTP
-url: https://github.com/sjauijn/app-adguard-home-plus
+url: https://github.com/sjauijn/adguard-home-plus-HAOS
 ingress: true
 ingress_port: 0
 ingress_stream: true
