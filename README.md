@@ -22,10 +22,19 @@ easily manage the filtering process and its settings.
 
 ## Installation
 
-1. Click to add the stable repository:
+1. **Ensure your Home Assistant device has a
+   [static IP and static external DNS servers!](https://developers.home-assistant.io/docs/operating-system/network)**
+   This is important! You **WILL** end up having issues if you skip this step.
+   - Change this setting in Network:
+     [![Open your Home Assistant instance and manage your systems network configuration.](https://my.home-assistant.io/badges/network.svg)](https://my.home-assistant.io/redirect/network/)
+     (_Settings → System → Network
+     → Configure network interfaces → Your Interface → IPv4 → Static_)
+   - Please note, setting a fixed IP in your router is **NOT** static.
+
+2. Click to add the stable repository:
    [![Add Stable Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/sjauijn/app-adguard-home-plus)
 
-2. Or manually add:
+   Or manually add:
 
    ```text
    https://github.com/sjauijn/app-adguard-home-plus
