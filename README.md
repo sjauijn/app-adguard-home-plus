@@ -17,7 +17,7 @@ AdGuard Home provides a beautiful, easy and feature-rich web interface to
 easily manage the filtering process and its settings.
 
 <p>
-  <img src="https://raw.githubusercontent.com/sjauijn/app-adguard-home-plus/main/images/screenshot.png" alt="icon">
+  <img src="https://raw.githubusercontent.com/sjauijn/app-adguard-home-plus/main/images/screenshot.jpg" alt="icon">
 </p>
 
 ## Installation
