@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/sjauijn/app-adguard-home-plus/main/adguard/icon.png" alt="icon">
 </p>
 
-# AdGuard Home Plus - Original HA Community App + AdGuardHome.yaml via "/addon_configs"
+# AdGuard Home Plus
 
 [AdGuard Home][adguard] is a network-wide ad-and-tracker blocking DNS server
 with parental control (adult content blocking) capabilities. Its purpose is to
@@ -37,14 +37,15 @@ comparison to installing any other Home Assistant app.
      (_Settings → System → Network
      → Configure network interfaces → Your Interface → IPv4 → Static_)
    - Please note, setting a fixed IP in your router is **NOT** static.
-1. Click the Home Assistant My button below to open the app on your Home
-   Assistant instance.
-   [![Open this app in your Home Assistant instance.][addon-badge]][addon]
-1. Click the "Install" button to install the app.
-1. Start the "AdGuard Home" app.
-1. Check the logs of the "AdGuard Home" to see if everything went well.
-1. Click the "OPEN WEB UI" button and log in with your Home Assistant account.
-1. Ready to go!
+
+2. Click to add the stable repository:
+   [![Add Stable Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/sjauijn/app-adguard-home-plus)
+
+   Or manually add:
+
+   ```text
+   https://github.com/sjauijn/app-adguard-home-plus
+   ```
 
 ## Configuration
 
